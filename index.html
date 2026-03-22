@@ -3,67 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Okey — Menü</title>
+<title>Menü</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-:root{
-  --krem:#f6f1e9;--krem2:#ede8df;--krem3:#e3ddd3;
-  --yazi:#28231e;--yazi2:#56504a;--yazi3:#8a847e;
-  --altin:#8b6914;--altin2:#b8901e;
-  --ince:rgba(40,35,30,0.1);--ince2:rgba(40,35,30,0.06);
-}
+:root{--krem:#f6f1e9;--yazi:#28231e;--yazi2:#56504a;--yazi3:#8a847e;--altin:#8b6914;--ince:rgba(40,35,30,0.1);--ince2:rgba(40,35,30,0.06);}
 html{scroll-behavior:smooth;}
 body{background:var(--krem);color:var(--yazi);font-family:'Montserrat',sans-serif;min-height:100vh;}
-body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 100% 40% at 50% 0%,rgba(139,105,20,0.05) 0%,transparent 50%);}
 
-.header{position:relative;z-index:10;text-align:center;padding:36px 24px 24px;border-bottom:1px solid var(--ince);background:var(--krem);}
+.header{text-align:center;padding:36px 24px 24px;border-bottom:1px solid var(--ince);background:var(--krem);}
 .header-ust{font-size:.55rem;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--yazi3);margin-bottom:10px;}
-.header-adi{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;font-style:italic;letter-spacing:4px;color:var(--yazi);line-height:1;}
-.header-alt{font-size:.55rem;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--yazi3);margin-top:8px;}
+.header-adi{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;font-style:italic;letter-spacing:4px;color:var(--yazi);}
+.header-alt{font-size:.55rem;letter-spacing:4px;text-transform:uppercase;color:var(--yazi3);margin-top:8px;}
 .header-cizgi{display:flex;align-items:center;gap:12px;margin-top:16px;}
 .hc-line{flex:1;height:1px;background:var(--ince);}
-.hc-orta{font-size:.55rem;letter-spacing:4px;text-transform:uppercase;color:var(--yazi3);font-weight:500;}
+.hc-orta{font-size:.55rem;letter-spacing:4px;color:var(--yazi3);}
 
 .sekme-kap{position:sticky;top:0;z-index:100;background:var(--krem);border-bottom:1px solid var(--ince);}
 .sekmeler{display:flex;overflow-x:auto;scrollbar-width:none;}
 .sekmeler::-webkit-scrollbar{display:none;}
-.sekme{flex:1;min-width:72px;padding:14px 8px 12px;text-align:center;cursor:pointer;border:none;background:transparent;color:var(--yazi3);font-family:'Montserrat',sans-serif;font-size:.55rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;border-bottom:2px solid transparent;transition:all .2s ease;}
+.sekme{flex:1;min-width:72px;padding:14px 8px 12px;text-align:center;cursor:pointer;border:none;background:transparent;color:var(--yazi3);font-family:'Montserrat',sans-serif;font-size:.55rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;border-bottom:2px solid transparent;transition:all .2s;}
 .sekme-ikon{font-size:1.1rem;display:block;margin-bottom:3px;opacity:.6;}
 .sekme.aktif{color:var(--yazi);border-bottom-color:var(--altin);}
 .sekme.aktif .sekme-ikon{opacity:1;}
 
-.panel{display:none;position:relative;z-index:1;}
+.panel{display:none;}
 .panel.aktif{display:block;animation:panelIn .3s ease;}
-@keyframes panelIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+@keyframes panelIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
 
 .kat-baslik{padding:20px 20px 14px;border-bottom:1px solid var(--ince2);display:flex;align-items:baseline;justify-content:space-between;}
-.kat-baslik-adi{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;font-style:italic;letter-spacing:2px;color:var(--yazi);}
-.kat-baslik-sayi{font-size:.55rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--yazi3);}
+.kat-baslik-adi{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;font-style:italic;letter-spacing:2px;}
+.kat-sayi{font-size:.55rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--yazi3);}
 
 .urun-list{padding:4px 20px 24px;}
-.urun-satir{display:flex;align-items:baseline;gap:0;padding:13px 0;border-bottom:1px solid var(--ince2);}
+.urun-satir{display:flex;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--ince2);}
 .urun-satir:last-child{border-bottom:none;}
-.u-no{font-size:.58rem;font-weight:500;letter-spacing:1px;color:var(--yazi3);width:24px;flex-shrink:0;}
+.u-no{font-size:.58rem;font-weight:500;color:var(--yazi3);width:24px;flex-shrink:0;}
 .u-icerik{flex:1;min-width:0;}
-.u-adi{font-family:'Cormorant Garamond',serif;font-size:1.12rem;font-weight:400;color:var(--yazi);line-height:1.3;}
-.u-aciklama{font-size:.6rem;font-weight:400;font-style:italic;color:var(--yazi3);margin-top:2px;}
+.u-adi{font-family:'Cormorant Garamond',serif;font-size:1.12rem;font-weight:400;line-height:1.3;}
+.u-aciklama{font-size:.6rem;font-style:italic;color:var(--yazi3);margin-top:2px;}
 .dot-line{flex:1;min-width:20px;border-bottom:1px dotted var(--ince);margin:0 10px;margin-bottom:4px;}
 .u-fiyat{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;color:var(--altin);white-space:nowrap;flex-shrink:0;}
 
 .masa-wrap{padding:0 20px 28px;}
-.masa-baslik{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;font-style:italic;letter-spacing:2px;color:var(--yazi);padding:20px 0 14px;border-bottom:1px solid var(--ince2);margin-bottom:16px;}
+.masa-baslik{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;font-style:italic;letter-spacing:2px;padding:20px 0 14px;border-bottom:1px solid var(--ince2);margin-bottom:4px;}
 .masa-satir{display:flex;align-items:center;padding:14px 0;border-bottom:1px solid var(--ince2);}
 .masa-satir:last-child{border-bottom:none;}
-.masa-satir-adi{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:var(--yazi);flex:1;}
+.masa-satir-adi{font-family:'Cormorant Garamond',serif;font-size:1.1rem;flex:1;}
 .masa-satir-sure{font-size:.62rem;font-style:italic;color:var(--yazi3);margin-right:16px;}
 .masa-satir-fiyat{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;color:var(--altin);white-space:nowrap;}
 
 .footer{text-align:center;padding:20px 20px 28px;border-top:1px solid var(--ince2);margin-top:8px;}
 .footer-cizgi{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
 .fc-line{flex:1;height:1px;background:var(--ince);}
-.fc-orta{font-size:.5rem;letter-spacing:3px;text-transform:uppercase;color:var(--yazi3);}
 .footer-text{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--yazi3);}
 </style>
 </head>
@@ -71,13 +64,9 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;bac
 
 <header class="header">
   <div class="header-ust">Menü</div>
-  <div class="header-adi">Okey</div>
-  <div class="header-alt">2026</div>
-  <div class="header-cizgi">
-    <div class="hc-line"></div>
-    <div class="hc-orta">✦</div>
-    <div class="hc-line"></div>
-  </div>
+  <div class="header-adi" id="h-adi"></div>
+  <div class="header-alt" id="h-yil"></div>
+  <div class="header-cizgi"><div class="hc-line"></div><div class="hc-orta">✦</div><div class="hc-line"></div></div>
 </header>
 
 <div class="sekme-kap">
@@ -90,43 +79,22 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;bac
   </div>
 </div>
 
-<!-- SICAK İÇECEKLER -->
 <div class="panel" id="p-sicak">
-  <div class="kat-baslik">
-    <div class="kat-baslik-adi">☕ Sıcak İçecekler</div>
-    <div class="kat-baslik-sayi">20 çeşit</div>
-  </div>
+  <div class="kat-baslik"><div class="kat-baslik-adi">☕ Sıcak İçecekler</div><div class="kat-sayi" id="sayi-sicak"></div></div>
   <div class="urun-list" id="list-sicak"></div>
 </div>
-
-<!-- KAHVE -->
 <div class="panel" id="p-kahve">
-  <div class="kat-baslik">
-    <div class="kat-baslik-adi">☕ Kahve</div>
-    <div class="kat-baslik-sayi">20 çeşit</div>
-  </div>
+  <div class="kat-baslik"><div class="kat-baslik-adi">☕ Kahve</div><div class="kat-sayi" id="sayi-kahve"></div></div>
   <div class="urun-list" id="list-kahve"></div>
 </div>
-
-<!-- SOĞUK İÇECEKLER -->
 <div class="panel" id="p-soguk">
-  <div class="kat-baslik">
-    <div class="kat-baslik-adi">🧊 Soğuk İçecekler</div>
-    <div class="kat-baslik-sayi">20 çeşit</div>
-  </div>
+  <div class="kat-baslik"><div class="kat-baslik-adi">🧊 Soğuk İçecekler</div><div class="kat-sayi" id="sayi-soguk"></div></div>
   <div class="urun-list" id="list-soguk"></div>
 </div>
-
-<!-- YİYECEKLER -->
 <div class="panel" id="p-yiyecek">
-  <div class="kat-baslik">
-    <div class="kat-baslik-adi">🍽️ Yiyecekler</div>
-    <div class="kat-baslik-sayi">20 çeşit</div>
-  </div>
+  <div class="kat-baslik"><div class="kat-baslik-adi">🍽️ Yiyecekler</div><div class="kat-sayi" id="sayi-yiyecek"></div></div>
   <div class="urun-list" id="list-yiyecek"></div>
 </div>
-
-<!-- MASA FİYATLARI -->
 <div class="panel" id="p-masa">
   <div class="masa-wrap">
     <div class="masa-baslik">Masa Fiyatları</div>
@@ -135,121 +103,22 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;bac
 </div>
 
 <div class="footer">
-  <div class="footer-cizgi"><div class="fc-line"></div><div class="fc-orta">✦</div><div class="fc-line"></div></div>
-  <div class="footer-text">Okey</div>
+  <div class="footer-cizgi"><div class="fc-line"></div><div class="hc-orta">✦</div><div class="fc-line"></div></div>
+  <div class="footer-text" id="f-adi"></div>
 </div>
 
+<script src="data.js"></script>
 <script>
-// ══════════════════════════════════════════
-// MENÜ VERİLERİ — Buradan güncelle
-// ══════════════════════════════════════════
-const menu = {
-  sicak: [
-    {ad:"Çay", aciklama:"Taze demlenmiş çay", fiyat:"15,00"},
-    {ad:"Demlik Çay", aciklama:"2 kişilik demlik", fiyat:"40,00"},
-    {ad:"Papatya Çayı", aciklama:"Kurutulmuş papatya", fiyat:"25,00"},
-    {ad:"Ihlamur", aciklama:"Doğal ıhlamur", fiyat:"25,00"},
-    {ad:"Ada Çayı", aciklama:"Ege adaçayı", fiyat:"25,00"},
-    {ad:"Nane Limon", aciklama:"Taze nane ile", fiyat:"25,00"},
-    {ad:"Kuşburnu Çayı", aciklama:"C vitamini deposu", fiyat:"25,00"},
-    {ad:"Zencefil Çayı", aciklama:"Zencefil + limon", fiyat:"28,00"},
-    {ad:"Tarçın Çayı", aciklama:"Doğal tarçın", fiyat:"25,00"},
-    {ad:"Böğürtlen Çayı", aciklama:"Meyveli çay", fiyat:"28,00"},
-    {ad:"Elma Çayı", aciklama:"Sıcak elma aromalı", fiyat:"20,00"},
-    {ad:"Rezene Çayı", aciklama:"Doğal rezene", fiyat:"25,00"},
-    {ad:"Mahlep Çayı", aciklama:"Geleneksel tat", fiyat:"25,00"},
-    {ad:"Salep", aciklama:"Süt ile hazırlanır", fiyat:"35,00"},
-    {ad:"Sütlü Salep", aciklama:"Ekstra köpüklü", fiyat:"40,00"},
-    {ad:"Osmanlı Salepi", aciklama:"Tarçın + fındık", fiyat:"45,00"},
-    {ad:"Sıcak Çikolata", aciklama:"Sütlü çikolata", fiyat:"45,00"},
-    {ad:"Boza", aciklama:"Geleneksel fermente", fiyat:"30,00"},
-    {ad:"Bitki Karışımı", aciklama:"Mevsim bitkilerinden", fiyat:"30,00"},
-    {ad:"Kış Çayı", aciklama:"Baharat karışımı", fiyat:"35,00"},
-  ],
-  kahve: [
-    {ad:"Türk Kahvesi", aciklama:"Geleneksel pişirim", fiyat:"40,00"},
-    {ad:"Sade Türk Kahvesi", aciklama:"Şekersiz", fiyat:"40,00"},
-    {ad:"Orta Türk Kahvesi", aciklama:"Az şekerli", fiyat:"40,00"},
-    {ad:"Şekerli Türk Kahvesi", aciklama:"Tatlı sevenler için", fiyat:"40,00"},
-    {ad:"Menengiç Kahvesi", aciklama:"Antep fıstığı çalısı", fiyat:"50,00"},
-    {ad:"Dibek Kahvesi", aciklama:"Taşta dövülmüş", fiyat:"55,00"},
-    {ad:"Mirra", aciklama:"Yoğun acı kahve", fiyat:"45,00"},
-    {ad:"Filtre Kahve", aciklama:"Yavaş demleme", fiyat:"50,00"},
-    {ad:"Americano", aciklama:"Espresso + su", fiyat:"55,00"},
-    {ad:"Espresso", aciklama:"Tek shot", fiyat:"50,00"},
-    {ad:"Çift Espresso", aciklama:"Çift shot", fiyat:"65,00"},
-    {ad:"Latte", aciklama:"Espresso + buharlı süt", fiyat:"65,00"},
-    {ad:"Cappuccino", aciklama:"Eşit oranlı köpük", fiyat:"65,00"},
-    {ad:"Macchiato", aciklama:"Espresso + az süt", fiyat:"60,00"},
-    {ad:"Flat White", aciklama:"Yoğun sütlü", fiyat:"65,00"},
-    {ad:"Mocha", aciklama:"Çikolatalı latte", fiyat:"70,00"},
-    {ad:"Vanilya Latte", aciklama:"Vanilya şurubu ile", fiyat:"70,00"},
-    {ad:"Karamelli Macchiato", aciklama:"Karamel şurubu", fiyat:"75,00"},
-    {ad:"Soğuk Brew", aciklama:"12 saat demlenmiş", fiyat:"70,00"},
-    {ad:"Frappe", aciklama:"Buzlu kahve köpüğü", fiyat:"65,00"},
-  ],
-  soguk: [
-    {ad:"Soğuk Su", aciklama:"500ml şişe", fiyat:"10,00"},
-    {ad:"Maden Suyu", aciklama:"Doğal maden", fiyat:"20,00"},
-    {ad:"Ayran", aciklama:"Ev yapımı yayık", fiyat:"20,00"},
-    {ad:"Kola", aciklama:"330ml kutu", fiyat:"30,00"},
-    {ad:"Fanta", aciklama:"Portakal aromalı", fiyat:"30,00"},
-    {ad:"Sprite", aciklama:"Limonlu gazlı", fiyat:"30,00"},
-    {ad:"Soda", aciklama:"Limonlu/sade", fiyat:"25,00"},
-    {ad:"Limonata", aciklama:"Taze sıkım", fiyat:"35,00"},
-    {ad:"Soğuk Limonata", aciklama:"Buzlu + nane", fiyat:"40,00"},
-    {ad:"Portakal Suyu", aciklama:"Taze sıkım", fiyat:"35,00"},
-    {ad:"Vişne Suyu", aciklama:"Doğal vişne", fiyat:"30,00"},
-    {ad:"Şeftali Suyu", aciklama:"Meyve suyu", fiyat:"30,00"},
-    {ad:"Elma Suyu", aciklama:"Doğal elma", fiyat:"30,00"},
-    {ad:"Ice Tea Şeftali", aciklama:"Soğuk buzlu çay", fiyat:"35,00"},
-    {ad:"Ice Tea Limon", aciklama:"Limonlu buzlu çay", fiyat:"35,00"},
-    {ad:"Soğuk Çay", aciklama:"Ev yapımı buzlu", fiyat:"35,00"},
-    {ad:"Soğuk Kahve", aciklama:"Buzlu sütlü kahve", fiyat:"55,00"},
-    {ad:"Smoothie", aciklama:"Mevsim meyveleri", fiyat:"55,00"},
-    {ad:"Kefir", aciklama:"Doğal probiyotik", fiyat:"35,00"},
-    {ad:"Meyveli Soda", aciklama:"Karışık meyve", fiyat:"30,00"},
-  ],
-  yiyecek: [
-    {ad:"Simit", aciklama:"Taze fırın", fiyat:"20,00"},
-    {ad:"Simit + Peynir", aciklama:"Beyaz peynirle", fiyat:"35,00"},
-    {ad:"Poğaça", aciklama:"Tereyağlı", fiyat:"25,00"},
-    {ad:"Kıymalı Poğaça", aciklama:"Taze kıyma ile", fiyat:"35,00"},
-    {ad:"Peynirli Börek", aciklama:"Çıtır yufka", fiyat:"45,00"},
-    {ad:"Kıymalı Börek", aciklama:"Kıyma + soğan", fiyat:"50,00"},
-    {ad:"Ispanaklı Börek", aciklama:"Taze ıspanak", fiyat:"45,00"},
-    {ad:"Patatesli Börek", aciklama:"Baharatlı patates", fiyat:"45,00"},
-    {ad:"Karışık Tost", aciklama:"Kaşar + sucuk", fiyat:"70,00"},
-    {ad:"Kaşarlı Tost", aciklama:"Bol kaşar", fiyat:"65,00"},
-    {ad:"Sucuklu Tost", aciklama:"Taze sucuk", fiyat:"70,00"},
-    {ad:"Kulüp Sandviç", aciklama:"3 katlı", fiyat:"80,00"},
-    {ad:"Sandviç", aciklama:"Mevsim sebzeli", fiyat:"65,00"},
-    {ad:"Çerez Tabağı", aciklama:"Karışık kuruyemiş", fiyat:"40,00"},
-    {ad:"Fındık", aciklama:"Taze kavrulmuş", fiyat:"35,00"},
-    {ad:"Meyve Tabağı", aciklama:"Mevsim meyveleri", fiyat:"65,00"},
-    {ad:"Kek", aciklama:"Günlük taze", fiyat:"40,00"},
-    {ad:"Brownie", aciklama:"Çikolatalı", fiyat:"45,00"},
-    {ad:"Waffle", aciklama:"Çikolata + dondurma", fiyat:"75,00"},
-    {ad:"Kurabiye", aciklama:"Ev yapımı", fiyat:"30,00"},
-  ],
-};
+document.getElementById('h-adi').textContent = SALON_ADI;
+document.getElementById('h-yil').textContent = new Date().getFullYear();
+document.getElementById('f-adi').textContent = SALON_ADI;
 
-const masalar = [
-  {ad:"Standart Masa", fiyat:"50,00", sure:"Saat Başı / Kişi"},
-  {ad:"VIP Masa", fiyat:"80,00", sure:"Saat Başı / Kişi"},
-  {ad:"Büyük Salon Masası", fiyat:"40,00", sure:"Saat Başı / Kişi"},
-  {ad:"Turnuva Masası", fiyat:"60,00", sure:"Saat Başı / Kişi"},
-  {ad:"Öğrenci Masası", fiyat:"35,00", sure:"Saat Başı / Kişi"},
-];
-
-// ══════════════════════════════════════════
-// RENDER
-// ══════════════════════════════════════════
 function renderUrunler(){
   ['sicak','kahve','soguk','yiyecek'].forEach(kat=>{
-    const el=document.getElementById('list-'+kat);
-    if(!el)return;
-    el.innerHTML=menu[kat].map((u,i)=>`
+    const list=document.getElementById('list-'+kat);
+    const sayi=document.getElementById('sayi-'+kat);
+    if(!list)return;
+    list.innerHTML=MENU[kat].map((u,i)=>`
       <div class="urun-satir">
         <span class="u-no">${String(i+1).padStart(2,'0')}</span>
         <div class="u-icerik">
@@ -259,15 +128,11 @@ function renderUrunler(){
         <span class="dot-line"></span>
         <span class="u-fiyat">₺${u.fiyat}</span>
       </div>`).join('');
-    // Çeşit sayısını güncelle
-    const baslik=document.querySelector(`#p-${kat} .kat-baslik-sayi`);
-    if(baslik)baslik.textContent=menu[kat].length+' çeşit';
+    if(sayi)sayi.textContent=MENU[kat].length+' çeşit';
   });
-
-  // Masalar
   const masaEl=document.getElementById('list-masa');
   if(masaEl){
-    masaEl.innerHTML=masalar.map(m=>`
+    masaEl.innerHTML=MASALAR.map(m=>`
       <div class="masa-satir">
         <span class="masa-satir-adi">${m.ad}</span>
         ${m.sure?`<span class="masa-satir-sure">${m.sure}</span>`:''}
@@ -279,9 +144,8 @@ function renderUrunler(){
 function ac(slug){
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('aktif'));
   document.querySelectorAll('.sekme').forEach(s=>s.classList.remove('aktif'));
-  const p=document.getElementById('p-'+slug),s=document.getElementById('s-'+slug);
-  if(p)p.classList.add('aktif');
-  if(s)s.classList.add('aktif');
+  document.getElementById('p-'+slug)?.classList.add('aktif');
+  document.getElementById('s-'+slug)?.classList.add('aktif');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 

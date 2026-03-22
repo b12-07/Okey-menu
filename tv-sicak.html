@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sıcak İçecekler</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--krem:#f6f1e9;--krem2:#ede8df;--yazi:#28231e;--yazi2:#56504a;--yazi3:#8a847e;--altin:#8b6914;--altin2:#b8901e;--ince:rgba(40,35,30,0.1);--ince2:rgba(40,35,30,0.06);}
+html,body{width:100vw;height:100vh;overflow:hidden;background:var(--krem);font-family:'Montserrat',sans-serif;color:var(--yazi);}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(139,105,20,0.06) 0%,transparent 60%);}
+.sayfa{position:relative;z-index:1;display:flex;flex-direction:column;height:100vh;}
+.header{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:18px 64px 14px;border-bottom:1px solid var(--ince);}
+.salon-adi{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--yazi2);animation:fadeIn .6s ease both;}
+.kat-wrap{text-align:center;}
+.kat-ikon{font-size:1.4rem;opacity:.7;display:block;margin-bottom:2px;}
+.kat-adi{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:300;letter-spacing:6px;text-transform:uppercase;font-style:italic;color:var(--yazi);animation:fadeDown .7s ease both;}
+.sag-panel{display:flex;flex-direction:column;align-items:flex-end;gap:1px;animation:fadeIn .6s .1s ease both;}
+.saat{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:var(--yazi);letter-spacing:3px;line-height:1;}
+.saat-nokta{animation:blink 1s step-end infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+.tarih{font-size:.78rem;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--yazi3);margin-top:2px;}
+.gun{color:var(--altin);font-weight:600;}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-12px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+.divider{display:flex;align-items:center;gap:16px;padding:8px 64px;}
+.div-line{flex:1;height:1px;background:var(--ince);}
+.div-center{font-size:.7rem;letter-spacing:4px;text-transform:uppercase;color:var(--yazi3);}
+.urunler-wrap{flex:1;min-height:0;padding:0 64px;overflow:hidden;}
+.urunler-kolonlar{display:grid;grid-template-columns:1fr 1fr;gap:0 48px;height:100%;align-content:start;padding-top:4px;}
+.urun-satir{display:flex;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--ince2);opacity:0;transform:translateY(8px);transition:opacity .4s ease,transform .4s ease;}
+.urun-satir.spot{background:rgba(139,105,20,0.04);margin:0 -12px;padding-left:12px;padding-right:12px;border-radius:4px;border-bottom-color:transparent;}
+.urun-satir.gorunsun{opacity:1;transform:translateY(0);}
+.urun-no{font-size:.8rem;font-weight:500;letter-spacing:1px;color:var(--yazi3);width:28px;flex-shrink:0;}
+.urun-adi{font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:400;color:var(--yazi);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.urun-aciklama{font-size:.82rem;font-weight:400;color:var(--yazi3);letter-spacing:.5px;margin-left:8px;flex-shrink:0;font-style:italic;}
+.dot-line{flex:1;min-width:16px;max-width:60px;border-bottom:1px dotted var(--ince);margin:0 10px;margin-bottom:4px;}
+.fiyat{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:500;color:var(--altin);white-space:nowrap;flex-shrink:0;transition:color .3s;}
+.urun-satir.spot .fiyat{color:var(--altin2);}
+.masa-banner{border-top:1px solid var(--ince);padding:10px 64px;display:flex;align-items:center;gap:20px;background:var(--krem2);}
+.masa-etiket{font-size:.78rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--yazi2);white-space:nowrap;flex-shrink:0;display:flex;align-items:center;gap:10px;}
+.masa-etiket::after{content:'';width:1px;height:12px;background:var(--ince);}
+.masa-ticker-wrap{overflow:hidden;flex:1;}
+.masa-ticker{display:flex;gap:48px;white-space:nowrap;animation:scroll 40s linear infinite;}
+@keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.masa-item{display:flex;align-items:center;gap:10px;font-size:1rem;color:var(--yazi2);}
+.masa-item-adi{font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:500;}
+.masa-item-fiyat{color:var(--altin);font-weight:600;}
+.masa-item-sure{color:var(--yazi3);font-size:.78rem;font-style:italic;}
+.masa-sep{color:var(--ince);}
+</style>
+</head>
+<body>
+<div class="sayfa">
+  <header class="header">
+    <div class="salon-adi" id="h-salon"></div>
+    <div class="kat-wrap">
+      <span class="kat-ikon">☕</span>
+      <div class="kat-adi">Sıcak İçecekler</div>
+    </div>
+    <div class="sag-panel">
+      <div class="saat"><span id="ss">--</span><span class="saat-nokta">:</span><span id="sd">--</span></div>
+      <div class="tarih"><span class="gun" id="gun"></span> · <span id="tarih"></span></div>
+    </div>
+  </header>
+  <div class="divider">
+    <div class="div-line"></div>
+    <div class="div-center" id="div-kat">Sıcak İçecekler</div>
+    <div class="div-line"></div>
+  </div>
+  <div class="urunler-wrap">
+    <div class="urunler-kolonlar">
+      <div class="kolon" id="kolon-sol"></div>
+      <div class="kolon" id="kolon-sag"></div>
+    </div>
+  </div>
+  <div class="masa-banner">
+    <div class="masa-etiket">Masa Fiyatları</div>
+    <div class="masa-ticker-wrap">
+      <div class="masa-ticker" id="masa-ticker"></div>
+    </div>
+  </div>
+</div>
+<script src="data.js"></script>
+<script>
+const KAT = 'sicak';
+document.getElementById('h-salon').textContent = SALON_ADI;
+const gunler=['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'];
+const n=new Date();
+document.getElementById('gun').textContent=gunler[n.getDay()];
+document.getElementById('tarih').textContent=String(n.getDate()).padStart(2,'0')+'.'+String(n.getMonth()+1).padStart(2,'0')+'.'+n.getFullYear();
+
+(function tick(){
+  const t=new Date();
+  document.getElementById('ss').textContent=String(t.getHours()).padStart(2,'0');
+  document.getElementById('sd').textContent=String(t.getMinutes()).padStart(2,'0');
+  setTimeout(tick,1000);
+})();
+
+const urunler=MENU[KAT]||[];
+const yari=Math.ceil(urunler.length/2);
+const sol=urunler.slice(0,yari);
+const sag=urunler.slice(yari);
+
+function satirHTML(u,no){
+  return `<div class="urun-satir">
+    <span class="urun-no">${String(no).padStart(2,'0')}</span>
+    <span class="urun-adi">${u.ad}</span>
+    ${u.aciklama?`<span class="urun-aciklama">${u.aciklama}</span>`:''}
+    <span class="dot-line"></span>
+    <span class="fiyat">₺${u.fiyat}</span>
+  </div>`;
+}
+
+document.getElementById('kolon-sol').innerHTML=sol.map((u,i)=>satirHTML(u,i+1)).join('');
+document.getElementById('kolon-sag').innerHTML=sag.map((u,i)=>satirHTML(u,yari+i+1)).join('');
+
+// Masa ticker
+const ticker=document.getElementById('masa-ticker');
+if(ticker){
+  ticker.innerHTML=[...MASALAR,...MASALAR].map(m=>`
+    <div class="masa-item">
+      <span class="masa-item-adi">${m.ad}</span>
+      <span class="masa-item-fiyat">₺${m.fiyat}</span>
+      ${m.sure?`<span class="masa-item-sure">/ ${m.sure}</span>`:''}
+    </div>
+    <span class="masa-sep">&mdash;</span>`).join('');
+}
+
+// Satırları sıralı göster
+const satirlar=document.querySelectorAll('.urun-satir');
+satirlar.forEach((s,i)=>setTimeout(()=>s.classList.add('gorunsun'),i*60+200));
+
+// Spotlight
+let si=0;
+function spot(){
+  satirlar.forEach(s=>s.classList.remove('spot'));
+  if(satirlar.length)satirlar[si%satirlar.length].classList.add('spot');
+  si++;
+}
+setTimeout(()=>{spot();setInterval(spot,3500);},2000);
+
+// Wake lock
+(async()=>{try{if('wakeLock' in navigator)await navigator.wakeLock.request('screen');}catch(e){}} )();
+
+// 5dk'da yenile
+setTimeout(()=>location.reload(),300000);
+</script>
+</body>
+</html>
