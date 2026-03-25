@@ -142,6 +142,32 @@ function spot(){
 }
 setTimeout(()=>{spot();setInterval(spot,3500);},2000);
 
+
+// Otomatik tam ekran
+function tamEkran(){
+  const el=document.documentElement;
+  if(el.requestFullscreen) el.requestFullscreen();
+  else if(el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+  else if(el.mozRequestFullScreen) el.mozRequestFullScreen();
+}
+// Sayfa yüklenince dene
+window.addEventListener('load', ()=>{
+  tamEkran();
+});
+// Tıklanınca da dene (bazı tarayıcılar kullanıcı etkileşimi ister)
+document.addEventListener('click', ()=>{
+  if(!document.fullscreenElement && !document.webkitFullscreenElement){
+    tamEkran();
+  }
+});
+// Tam ekrandan çıkılınca tekrar gir
+document.addEventListener('fullscreenchange', ()=>{
+  if(!document.fullscreenElement) setTimeout(tamEkran, 1000);
+});
+document.addEventListener('webkitfullscreenchange', ()=>{
+  if(!document.webkitFullscreenElement) setTimeout(tamEkran, 1000);
+});
+
 // Wake lock
 (async()=>{try{if('wakeLock' in navigator)await navigator.wakeLock.request('screen');}catch(e){}} )();
 
