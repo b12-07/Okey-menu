@@ -255,11 +255,42 @@ if(tk)tk.innerHTML=[...MASALAR,...MASALAR].map(m=>`<div class="masa-item"><span 
   }
 })();
 
-function tamEkran(){const e=document.documentElement;if(e.requestFullscreen)e.requestFullscreen();else if(e.webkitRequestFullscreen)e.webkitRequestFullscreen();}
-window.addEventListener('load',()=>setTimeout(tamEkran,500));
+// TAM EKRAN — açılışta + çıkınca otomatik geri gir
+function tamEkran(){
+  const e=document.documentElement;
+  if(document.fullscreenElement||document.webkitFullscreenElement) return;
+  if(e.requestFullscreen) e.requestFullscreen().catch(()=>{});
+  else if(e.webkitRequestFullscreen) e.webkitRequestFullscreen();
+}
+// Sayfa yüklenince tam ekrana gir
+window.addEventListener('load',()=>setTimeout(tamEkran,600));
+// Tam ekrandan çıkılınca otomatik geri gir
+document.addEventListener('fullscreenchange',()=>{
+  if(!document.fullscreenElement) setTimeout(tamEkran,1500);
+});
+document.addEventListener('webkitfullscreenchange',()=>{
+  if(!document.webkitFullscreenElement) setTimeout(tamEkran,1500);
+});
+// İlk tıklamada tam ekrana gir (otomatik açılmazsa)
 document.addEventListener('click',tamEkran,{once:true});
-(async()=>{try{if('wakeLock'in navigator)await navigator.wakeLock.request('screen');}catch(e){}})();
-setTimeout(()=>location.reload(),300000);
+
+// WAKE LOCK — ekranı uyutma
+let wakeLock=null;
+async function wakeLockAl(){
+  try{
+    if('wakeLock' in navigator){
+      wakeLock=await navigator.wakeLock.request('screen');
+      wakeLock.addEventListener('release',()=>{ setTimeout(wakeLockAl,1000); });
+    }
+  }catch(e){}
+}
+wakeLockAl();
+// Sayfa tekrar görünür olunca wake lock yenile
+document.addEventListener('visibilitychange',()=>{
+  if(document.visibilityState==='visible') wakeLockAl();
+});
+
+// OTOMATİK YENİLEME YOK
 
 </script>
 </body>
