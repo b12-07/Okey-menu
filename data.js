@@ -54,7 +54,7 @@ const EKRANLAR = {
           {ad:"Fanta", fiyat:"80"},
           {ad:"Ayran", fiyat:"50"},
           {ad:"Meyve Suyu", fiyat:"60"},
-          {ad:"Limon", fiyat:"70"},
+          {ad:"Soda-Limon", fiyat:"70"},
           {ad:"Meyveli Soda", fiyat:"50"},
         ]
       }
