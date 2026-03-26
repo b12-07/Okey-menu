@@ -196,7 +196,7 @@ function ayarla(){
   const ss=document.querySelectorAll('.urun-satir');
   if(!ss.length)return;
   const h=ss[0].getBoundingClientRect().height;
-  const fs=Math.floor(h*0.68);
+  const fs=Math.floor(h*0.88);
   ss.forEach(s=>{
     const ad=s.querySelector('.urun-adi');if(ad)ad.style.fontSize=fs+'px';
     const fi=s.querySelector('.fiyat');if(fi)fi.style.fontSize=Math.floor(fs*.9)+'px';
