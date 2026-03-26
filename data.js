@@ -93,9 +93,4 @@ const EKRANLAR = {
   }
 };
 
-const MASALAR = [
-  {ad:"Standart Masa", fiyat:"50", sure:"Saat Başı / Kişi"},
-  {ad:"VIP Masa", fiyat:"80", sure:"Saat Başı / Kişi"},
-  {ad:"Turnuva Masası", fiyat:"60", sure:"Saat Başı / Kişi"},
-  {ad:"Öğrenci Masası", fiyat:"35", sure:"Saat Başı / Kişi"},
-];
+
