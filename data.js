@@ -1,105 +1,100 @@
-// ══════════════════════════════════════════
-// OKEY MENÜ VERİLERİ
-// Sadece bu dosyayı güncelle — tüm ekranlar otomatik değişir
-// ══════════════════════════════════════════
-
 const SALON_ADI = "Okey";
 
-const MENU = {
-  sicak: [
-    {ad:"Çay", aciklama:"Taze demlenmiş çay", fiyat:"15,00"},
-    {ad:"Demlik Çay", aciklama:"2 kişilik demlik", fiyat:"40,00"},
-    {ad:"Papatya Çayı", aciklama:"Kurutulmuş papatya", fiyat:"25,00"},
-    {ad:"Ihlamur", aciklama:"Doğal ıhlamur", fiyat:"25,00"},
-    {ad:"Ada Çayı", aciklama:"Ege adaçayı", fiyat:"25,00"},
-    {ad:"Nane Limon", aciklama:"Taze nane ile", fiyat:"25,00"},
-    {ad:"Kuşburnu Çayı", aciklama:"C vitamini deposu", fiyat:"25,00"},
-    {ad:"Zencefil Çayı", aciklama:"Zencefil + limon", fiyat:"28,00"},
-    {ad:"Tarçın Çayı", aciklama:"Doğal tarçın", fiyat:"25,00"},
-    {ad:"Böğürtlen Çayı", aciklama:"Meyveli çay", fiyat:"28,00"},
-    {ad:"Elma Çayı", aciklama:"Sıcak elma aromalı", fiyat:"20,00"},
-    {ad:"Rezene Çayı", aciklama:"Doğal rezene", fiyat:"25,00"},
-    {ad:"Mahlep Çayı", aciklama:"Geleneksel tat", fiyat:"25,00"},
-    {ad:"Salep", aciklama:"Süt ile hazırlanır", fiyat:"35,00"},
-    {ad:"Sütlü Salep", aciklama:"Ekstra köpüklü", fiyat:"40,00"},
-    {ad:"Osmanlı Salepi", aciklama:"Tarçın + fındık", fiyat:"45,00"},
-    {ad:"Sıcak Çikolata", aciklama:"Sütlü çikolata", fiyat:"45,00"},
-    {ad:"Boza", aciklama:"Geleneksel fermente", fiyat:"30,00"},
-    {ad:"Bitki Karışımı", aciklama:"Mevsim bitkilerinden", fiyat:"30,00"},
-    {ad:"Kış Çayı", aciklama:"Baharat karışımı", fiyat:"35,00"},
-  ],
-  kahve: [
-    {ad:"Türk Kahvesi", aciklama:"Geleneksel pişirim", fiyat:"40,00"},
-    {ad:"Sade Türk Kahvesi", aciklama:"Şekersiz", fiyat:"40,00"},
-    {ad:"Orta Türk Kahvesi", aciklama:"Az şekerli", fiyat:"40,00"},
-    {ad:"Şekerli Türk Kahvesi", aciklama:"Tatlı sevenler için", fiyat:"40,00"},
-    {ad:"Menengiç Kahvesi", aciklama:"Antep fıstığı çalısı", fiyat:"50,00"},
-    {ad:"Dibek Kahvesi", aciklama:"Taşta dövülmüş", fiyat:"55,00"},
-    {ad:"Mirra", aciklama:"Yoğun acı kahve", fiyat:"45,00"},
-    {ad:"Filtre Kahve", aciklama:"Yavaş demleme", fiyat:"50,00"},
-    {ad:"Americano", aciklama:"Espresso + su", fiyat:"55,00"},
-    {ad:"Espresso", aciklama:"Tek shot", fiyat:"50,00"},
-    {ad:"Çift Espresso", aciklama:"Çift shot", fiyat:"65,00"},
-    {ad:"Latte", aciklama:"Espresso + buharlı süt", fiyat:"65,00"},
-    {ad:"Cappuccino", aciklama:"Eşit oranlı köpük", fiyat:"65,00"},
-    {ad:"Macchiato", aciklama:"Espresso + az süt", fiyat:"60,00"},
-    {ad:"Flat White", aciklama:"Yoğun sütlü", fiyat:"65,00"},
-    {ad:"Mocha", aciklama:"Çikolatalı latte", fiyat:"70,00"},
-    {ad:"Vanilya Latte", aciklama:"Vanilya şurubu ile", fiyat:"70,00"},
-    {ad:"Karamelli Macchiato", aciklama:"Karamel şurubu", fiyat:"75,00"},
-    {ad:"Soğuk Brew", aciklama:"12 saat demlenmiş", fiyat:"70,00"},
-    {ad:"Frappe", aciklama:"Buzlu kahve köpüğü", fiyat:"65,00"},
-  ],
-  soguk: [
-    {ad:"Soğuk Su", aciklama:"500ml şişe", fiyat:"10,00"},
-    {ad:"Maden Suyu", aciklama:"Doğal maden", fiyat:"20,00"},
-    {ad:"Ayran", aciklama:"Ev yapımı yayık", fiyat:"20,00"},
-    {ad:"Kola", aciklama:"330ml kutu", fiyat:"30,00"},
-    {ad:"Fanta", aciklama:"Portakal aromalı", fiyat:"30,00"},
-    {ad:"Sprite", aciklama:"Limonlu gazlı", fiyat:"30,00"},
-    {ad:"Soda", aciklama:"Limonlu/sade", fiyat:"25,00"},
-    {ad:"Limonata", aciklama:"Taze sıkım", fiyat:"35,00"},
-    {ad:"Soğuk Limonata", aciklama:"Buzlu + nane", fiyat:"40,00"},
-    {ad:"Portakal Suyu", aciklama:"Taze sıkım", fiyat:"35,00"},
-    {ad:"Vişne Suyu", aciklama:"Doğal vişne", fiyat:"30,00"},
-    {ad:"Şeftali Suyu", aciklama:"Meyve suyu", fiyat:"30,00"},
-    {ad:"Elma Suyu", aciklama:"Doğal elma", fiyat:"30,00"},
-    {ad:"Ice Tea Şeftali", aciklama:"Soğuk buzlu çay", fiyat:"35,00"},
-    {ad:"Ice Tea Limon", aciklama:"Limonlu buzlu çay", fiyat:"35,00"},
-    {ad:"Soğuk Çay", aciklama:"Ev yapımı buzlu", fiyat:"35,00"},
-    {ad:"Soğuk Kahve", aciklama:"Buzlu sütlü kahve", fiyat:"55,00"},
-    {ad:"Smoothie", aciklama:"Mevsim meyveleri", fiyat:"55,00"},
-    {ad:"Kefir", aciklama:"Doğal probiyotik", fiyat:"35,00"},
-    {ad:"Meyveli Soda", aciklama:"Karışık meyve", fiyat:"30,00"},
-  ],
-  yiyecek: [
-    {ad:"Simit", aciklama:"Taze fırın", fiyat:"20,00"},
-    {ad:"Simit + Peynir", aciklama:"Beyaz peynirle", fiyat:"35,00"},
-    {ad:"Poğaça", aciklama:"Tereyağlı", fiyat:"25,00"},
-    {ad:"Kıymalı Poğaça", aciklama:"Taze kıyma ile", fiyat:"35,00"},
-    {ad:"Peynirli Börek", aciklama:"Çıtır yufka", fiyat:"45,00"},
-    {ad:"Kıymalı Börek", aciklama:"Kıyma + soğan", fiyat:"50,00"},
-    {ad:"Ispanaklı Börek", aciklama:"Taze ıspanak", fiyat:"45,00"},
-    {ad:"Patatesli Börek", aciklama:"Baharatlı patates", fiyat:"45,00"},
-    {ad:"Karışık Tost", aciklama:"Kaşar + sucuk", fiyat:"70,00"},
-    {ad:"Kaşarlı Tost", aciklama:"Bol kaşar", fiyat:"65,00"},
-    {ad:"Sucuklu Tost", aciklama:"Taze sucuk", fiyat:"70,00"},
-    {ad:"Kulüp Sandviç", aciklama:"3 katlı", fiyat:"80,00"},
-    {ad:"Sandviç", aciklama:"Mevsim sebzeli", fiyat:"65,00"},
-    {ad:"Çerez Tabağı", aciklama:"Karışık kuruyemiş", fiyat:"40,00"},
-    {ad:"Fındık", aciklama:"Taze kavrulmuş", fiyat:"35,00"},
-    {ad:"Meyve Tabağı", aciklama:"Mevsim meyveleri", fiyat:"65,00"},
-    {ad:"Kek", aciklama:"Günlük taze", fiyat:"40,00"},
-    {ad:"Brownie", aciklama:"Çikolatalı", fiyat:"45,00"},
-    {ad:"Waffle", aciklama:"Çikolata + dondurma", fiyat:"75,00"},
-    {ad:"Kurabiye", aciklama:"Ev yapımı", fiyat:"30,00"},
-  ],
+const EKRANLAR = {
+
+  kahve: {
+    baslik: "Kahveler",
+    ikon: "☕",
+    kategoriler: [
+      {
+        ad: "Sıcak Kahve",
+        urunler: [
+          {ad:"Filtre Kahve", fiyat:"120"},
+          {ad:"Latte", fiyat:"140"},
+          {ad:"Americano", fiyat:"220"},
+          {ad:"White Mocha", fiyat:"150"},
+          {ad:"Mocha", fiyat:"250"},
+          {ad:"Caramel Latte", fiyat:"150"},
+          {ad:"Türk Kahvesi", fiyat:"120"},
+          {ad:"Dibek & Menengiç K.", fiyat:"120"},
+          {ad:"Chai Latte", fiyat:"130"},
+        ]
+      },
+      {
+        ad: "Soğuk Kahve",
+        urunler: [
+          {ad:"Ice Latte", fiyat:"160"},
+          {ad:"Ice Americano", fiyat:"150"},
+          {ad:"Ice White Mocha", fiyat:"180"},
+          {ad:"Ice Caramel Macchiato", fiyat:"180"},
+        ]
+      }
+    ]
+  },
+
+  icecek: {
+    baslik: "İçecekler",
+    ikon: "🥤",
+    kategoriler: [
+      {
+        ad: "Sıcak İçecekler",
+        urunler: [
+          {ad:"Çay", fiyat:"50"},
+          {ad:"Oralet", fiyat:"60"},
+          {ad:"Salep", fiyat:"130"},
+          {ad:"Sıcak Çikolata", fiyat:"130"},
+          {ad:"Milkshake", aciklama:"Çikolata · Çilek · Böğürtlen", fiyat:"200"},
+        ]
+      },
+      {
+        ad: "Soğuk & Dolap",
+        urunler: [
+          {ad:"Su", fiyat:"35"},
+          {ad:"Soda", fiyat:"40"},
+          {ad:"Fanta", fiyat:"80"},
+          {ad:"Ayran", fiyat:"50"},
+          {ad:"Meyve Suyu", fiyat:"60"},
+          {ad:"Limon", fiyat:"70"},
+          {ad:"Meyveli Soda", fiyat:"50"},
+        ]
+      }
+    ]
+  },
+
+  yiyecek: {
+    baslik: "Atıştırmalık",
+    ikon: "🍽️",
+    kategoriler: [
+      {
+        ad: "Atıştırmalık",
+        urunler: [
+          {ad:"Gözleme", aciklama:"Patates·Kaşar·Peynir 200 / Menü 250", fiyat:"210"},
+          {ad:"Bazlama Tost", fiyat:"210"},
+          {ad:"Tost", aciklama:"Kaşarlı 180 · Sucuklu 200 · Karışık 230", fiyat:""},
+          {ad:"Sıcak Sepeti", fiyat:"250"},
+          {ad:"Makarna", fiyat:"280"},
+          {ad:"Wrap", fiyat:"280"},
+          {ad:"Hamburger", fiyat:"295"},
+          {ad:"Patates Tabağı", fiyat:"170"},
+          {ad:"Tavuk Menü", fiyat:"305"},
+          {ad:"Pizza Karışık", fiyat:"280"},
+        ]
+      },
+      {
+        ad: "Tatlılar",
+        urunler: [
+          {ad:"Sütlaç", fiyat:"150"},
+          {ad:"Profiterol", fiyat:"180"},
+          {ad:"Sufle", fiyat:"200"},
+        ]
+      }
+    ]
+  }
 };
 
 const MASALAR = [
-  {ad:"Standart Masa", fiyat:"50,00", sure:"Saat Başı / Kişi"},
-  {ad:"VIP Masa", fiyat:"80,00", sure:"Saat Başı / Kişi"},
-  {ad:"Büyük Salon Masası", fiyat:"40,00", sure:"Saat Başı / Kişi"},
-  {ad:"Turnuva Masası", fiyat:"60,00", sure:"Saat Başı / Kişi"},
-  {ad:"Öğrenci Masası", fiyat:"35,00", sure:"Saat Başı / Kişi"},
+  {ad:"Standart Masa", fiyat:"50", sure:"Saat Başı / Kişi"},
+  {ad:"VIP Masa", fiyat:"80", sure:"Saat Başı / Kişi"},
+  {ad:"Turnuva Masası", fiyat:"60", sure:"Saat Başı / Kişi"},
+  {ad:"Öğrenci Masası", fiyat:"35", sure:"Saat Başı / Kişi"},
 ];
