@@ -16,7 +16,8 @@ const EKRANLAR = {
           {ad:"Mocha", fiyat:"250"},
           {ad:"Caramel Latte", fiyat:"150"},
           {ad:"Türk Kahvesi", fiyat:"120"},
-          {ad:"Dibek & Menengiç", fiyat:"120"},
+          {ad:"Dibek", fiyat:"120"},
+          {ad:"Menengiç", fiyat:"120"},
           {ad:"Chai Latte", fiyat:"130"},
         ]
       },
