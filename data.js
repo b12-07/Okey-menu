@@ -70,7 +70,7 @@ const EKRANLAR = {
         urunler: [
           {ad:"Gözleme", aciklama:"Patates·Kaşar·Peynir 200 / Menü 250", fiyat:"210"},
           {ad:"Bazlama Tost", fiyat:"210"},
-          {ad:"Tost", aciklama:"Kaşarlı 180 · Sucuklu 200 · Karışık 230", fiyat:""},
+          {ad:"Tost", aciklama:"Kaşarlı 180 · Sucuklu 200 · Karışık 230", fiyat:"210"},
           {ad:"Sıcak Sepeti", fiyat:"250"},
           {ad:"Makarna", fiyat:"280"},
           {ad:"Wrap", fiyat:"280"},
