@@ -196,14 +196,14 @@ function ayarla(){
   const ss=document.querySelectorAll('.urun-satir');
   if(!ss.length)return;
   const h=ss[0].getBoundingClientRect().height;
-  const fs=Math.floor(h*0.56);
+  const fs=Math.floor(h*0.68);
   ss.forEach(s=>{
     const ad=s.querySelector('.urun-adi');if(ad)ad.style.fontSize=fs+'px';
     const fi=s.querySelector('.fiyat');if(fi)fi.style.fontSize=Math.floor(fs*.9)+'px';
     const no=s.querySelector('.urun-no');if(no)no.style.fontSize=Math.floor(fs*.48)+'px';
     const ac=s.querySelector('.urun-aciklama');if(ac)ac.style.fontSize=Math.floor(fs*.36)+'px';
   });
-  document.querySelectorAll('.kat-baslik').forEach(b=>{b.style.fontSize=Math.floor(fs*.55)+'px';});
+  document.querySelectorAll('.kat-baslik').forEach(b=>{b.style.fontSize=Math.floor(fs*.62)+'px';});
 }
 window.addEventListener('load',()=>{setTimeout(ayarla,150);setTimeout(ayarla,500);});
 window.addEventListener('resize',ayarla);
