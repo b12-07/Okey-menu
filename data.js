@@ -52,11 +52,14 @@ const EKRANLAR = {
         urunler: [
           {ad:"Su", fiyat:"35"},
           {ad:"Soda", fiyat:"40"},
-          {ad:"Fanta", fiyat:"80"},
-          {ad:"Ayran", fiyat:"50"},
-          {ad:"Meyve Suyu", fiyat:"60"},
           {ad:"Soda-Limon", fiyat:"70"},
           {ad:"Meyveli Soda", fiyat:"50"},
+          {ad:"Cola&Fanta", fiyat:"80"},
+          {ad:"Ayran", fiyat:"50"},
+          {ad:"Meyve Suyu", fiyat:"60"},
+          {ad:"Niğde gazoz", fiyat:"120"},
+           {ad:"monster", fiyat:"70"},
+         
         ]
       }
     ]
